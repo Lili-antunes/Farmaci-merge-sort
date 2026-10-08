@@ -56,7 +56,6 @@ public class Main {
         }
     }
 
-    // Chama o Merge Sort desenvolvido pelo grupo
     private static void ordenar(String campo, Comparator<Medicamento> criterio) {
         if (estoque.isEmpty()) {
             System.out.println("Nenhum medicamento cadastrado.");

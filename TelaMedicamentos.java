@@ -29,7 +29,6 @@ public class TelaMedicamentos extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new BorderLayout(8, 8));
 
-        // ---- formulario (topo) ----
         JPanel form = new JPanel(new FlowLayout(FlowLayout.LEFT));
         form.add(new JLabel("Nome:"));
         form.add(campoNome);
@@ -42,12 +41,10 @@ public class TelaMedicamentos extends JFrame {
         form.add(btnCadastrar);
         add(form, BorderLayout.NORTH);
 
-        // ---- tabela (centro) ----
         JTable tabela = new JTable(modelo);
         tabela.getColumnModel().getColumn(0).setMaxWidth(40);
         add(new JScrollPane(tabela), BorderLayout.CENTER);
 
-        // ---- botoes (rodape) ----
         JPanel rodape = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JButton btnNome = new JButton("Ordenar por nome (A-Z)");
         btnNome.addActionListener(e ->
@@ -115,7 +112,6 @@ public class TelaMedicamentos extends JFrame {
         atualizarTabela("8 medicamentos de exemplo carregados.");
     }
 
-    // redesenha a tabela com o conteudo atual da lista
     private void atualizarTabela(String mensagem) {
         modelo.setRowCount(0);
         for (int i = 0; i < estoque.size(); i++) {
